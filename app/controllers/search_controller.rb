@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   def create
-    binding.pry
     search_params = {
       term: params[:restaurant_name],
       limit: 1,
@@ -8,6 +7,14 @@ class SearchController < ApplicationController
     }
 
     restaurant = Yelp.client.search('New York', search_params).businesses.first
-    reviews(restaurant, params[:reviews])
+    @reviews = reviews(restaurant, params[:reviews])
+
+    render :new
+  end
+
+  private def reviews(restaurant, number_of_reviews)
+    mechanize = Mechanize.new
+    page = mechanize.get("https://www.yelp.com/biz/#{restaurant.id}")
+    reviews = page.css('ul.reviews li .review-content').first(number_of_reviews.to_i)
   end
 end
