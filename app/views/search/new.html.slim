@@ -1,0 +1,9 @@
+h1 Search for pizza
+
+= form_tag('/search/create') do
+  div
+    = search_field_tag :restaurant_name
+  div
+    = select_tag :reviews, options_for_reviews_select
+  div
+    = submit_tag 'Search'
