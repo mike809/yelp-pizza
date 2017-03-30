@@ -1,3 +1,5 @@
+- unless reviews.present?
+  h3 = "No reviews found"
 - reviews.each do |review|
   p = "Star Rating: #{review.css('.biz-rating div.i-stars').first['title']}"
   p == review.css('p')

@@ -8,5 +8,8 @@ h1 Search for pizza
   div
     = submit_tag 'Search'
 
-- if @reviews
+- if @restaurant.present?
+  h1 = @restaurant.name
   = render partial: 'reviews', locals: { reviews: @reviews }
+- else
+  h3 = "No restaurant found"

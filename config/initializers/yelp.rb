@@ -6,6 +6,3 @@ Yelp.client.configure do |config|
   config.token = '4F8E_5ABHcq2rvfe8kkpGvShtlD-I2d7' # ENV['TOKEN']
   config.token_secret = 'NputXloIgxH6aGGBXIW_Mt_CDgg' # ENV['TOKEN_SECRET']
 end
-
-# APP_ID='gAWmxXjMQ3xgXXqm2cwhwA'
-# APP_SECRET='TEYLs1KkObbHuH41HzOGdeF88jFEca4tVEsW5ZlEZAa9IPtBu3TyY8wKSJrGd4AP'

@@ -6,8 +6,8 @@ class SearchController < ApplicationController
       category_filter: 'pizza'
     }
 
-    restaurant = Yelp.client.search('New York', search_params).businesses.first
-    @reviews = reviews(restaurant, params[:reviews])
+    @restaurant = Yelp.client.search('New York', search_params).businesses.first
+    @reviews = reviews(@restaurant, params[:reviews]) if @restaurant.present?
 
     render :new
   end
