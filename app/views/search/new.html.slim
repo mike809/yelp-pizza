@@ -11,5 +11,5 @@ h1 = t('.title')
 - if @restaurant.present?
   h1 = @restaurant.name
   = render partial: 'reviews', locals: { reviews: @reviews }
-- else
+- elsif action_name == 'create'
   h3 = t('.no_restaurants_found')
