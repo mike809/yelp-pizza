@@ -1,6 +1,6 @@
 - unless reviews.present?
-  h3 = "No reviews found"
+  h3 = t('.no_reviews')
 - reviews.each do |review|
-  p = "Star Rating: #{review.css('.biz-rating div.i-stars').first['title']}"
+  p = t('.rating', rating: review.css('.biz-rating div.i-stars').first['title'])
   p == review.css('p')
   hr

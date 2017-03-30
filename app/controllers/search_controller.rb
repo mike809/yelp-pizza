@@ -13,8 +13,9 @@ class SearchController < ApplicationController
   end
 
   private def reviews(restaurant, number_of_reviews)
-    mechanize = Mechanize.new
-    page = mechanize.get("https://www.yelp.com/biz/#{restaurant.id}")
+    return [] unless restaurant.present?
+
+    page = Mechanize.new.get("https://www.yelp.com/biz/#{restaurant.id}")
     reviews = page.css('ul.reviews li .review-content').first(number_of_reviews.to_i)
   end
 end

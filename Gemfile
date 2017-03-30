@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'hashie'
 gem 'pry-byebug'
 gem 'mechanize'
 gem 'yelp', require: 'yelp'

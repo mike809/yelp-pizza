@@ -1,4 +1,4 @@
-h1 Search for pizza
+h1 = t('.title')
 
 = form_tag('/') do
   div
@@ -6,10 +6,10 @@ h1 Search for pizza
   div
     = select_tag :reviews, options_for_reviews_select
   div
-    = submit_tag 'Search'
+    = submit_tag t('.search')
 
 - if @restaurant.present?
   h1 = @restaurant.name
   = render partial: 'reviews', locals: { reviews: @reviews }
 - else
-  h3 = "No restaurant found"
+  h3 = t('.no_restaurants_found')
